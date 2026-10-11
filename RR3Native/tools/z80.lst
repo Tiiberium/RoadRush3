@@ -1,0 +1,2162 @@
+WARNING: unhandled self-modifying store at 1633 (ld ($1637),a) into code at 1636
+z80: 2159 instructions, 598 blocks, 2 indirect
+0000  * jp $0533
+0533  * di
+0534    ld sp,$1ffe
+0537    im 0
+0539    call $09e9
+053c  * exx
+053d    ld de,$4001
+0540    ld hl,$4000
+0543    exx
+0544    ld iy,$4000
+0548    call $096f
+054b  * call $08e6
+054e  * call $08c5
+0551  * call $094d
+0554  * call $093b
+0557  * call $09ac
+055a  * ld a,$3f
+055c    ld ($0081),a
+055f    ld a,$0f
+0561    ld ($00cc),a
+0564    ld a,$07
+0566    ld ($00ac),a
+0569    ld a,$ff
+056b    ld ($004f),a
+056e  * call $1615
+0571  * ld a,($000c)
+0574    or a
+0575    jr z,$056e
+0577  * ld a,($000d)
+057a    rra
+057b    rra
+057c    and $1c
+057e    ld ($0582),a
+0581    jr $0583   ; self-modified displacement
+0583  * jp $05a3
+0587  * jp $0670
+058b  * jp $06ff
+058f  * jp $07bd
+0593  * jp $0824
+0597  * jp $056e
+059b  * jp $0839
+059f  * jp $0851
+05a3  * call $08a3
+05a6  * call $09fb
+05a9  * ld ($0062),a
+05ac  * call $0a05
+05af  * ld ($0063),ix
+05b3    ld a,(hl)
+05b6    cp $07
+05b8    jr nz,$05cc
+05ba  * ld a,($000e)
+05bd    add a,$02
+05bf    ld c,a
+05c0    ld b,$00
+05c2    add ix,bc
+05c4    ld a,(hl)
+05c7    ld ($0062),a
+05ca    jr $05ac
+05cc  * ld a,($000e)
+05cf    ld ($0069),a
+05d2    call $1615
+05d5  * ld a,(hl)
+05d8    cp $00
+05da    jr z,$05e7
+05dc  * cp $02
+05de    jr z,$061c
+05e0  * cp $04
+05e2    jr z,$0632
+05e4  * jp $066a
+05e7  * ld hl,$008e
+05ea    ld ix,$009a
+05ee    ld a,($0081)
+05f1    ld b,a
+05f2    ld c,$00
+05f4  * call $1615
+05f7  * srl b
+05f9    jr c,$0609
+05fb  * ld a,($0065)
+05fe    cp (hl)
+0601    jr nz,$0609
+0603  * ld a,($0069)
+0606    cp (hl)
+0607    jr z,$0615
+0609  * inc hl
+060a    inc ix
+060c    inc c
+060d    ld a,c
+060e    cp $06
+0610    jr nz,$05f4
+0612  * jp $066a
+0615  * ld a,c
+0616    call $0aa1
+0619  * jp $066a
+061c  * bit 2,(ix+4)
+0620    jr z,$066a
+0622  * ld a,($0069)
+0625    ld b,a
+0626    ld a,($0093)
+0629    cp b
+062a    jr nz,$066a
+062c  * call $0adc
+062f  * jp $066a
+0632  * ld hl,$00d1
+0635    ld ix,$00d9
+0639    ld a,($00cc)
+063c    ld b,a
+063d    ld c,$00
+063f  * call $1615
+0642  * srl b
+0644    jr c,$0654
+0646  * ld a,($0065)
+0649    cp (hl)
+064c    jr nz,$0654
+064e  * ld a,($0069)
+0651    cp (hl)
+0652    jr z,$0660
+0654  * inc hl
+0655    inc ix
+0657    inc c
+0658    ld a,c
+0659    cp $04
+065b    jr nz,$063f
+065d  * jp $066a
+0660  * ld a,c
+0661    ld ($0061),a
+0664    call $0af4
+0667  * jp $066a
+066a  * call $0982
+066d  * jp $056e
+0670  * call $08a3
+0673  * add a,$00
+0675    ld l,a
+0676    ld h,$03
+0678    ld a,(hl)
+0679    or a
+067a    jr nz,$067f
+067c  * jp $06f9
+067f  * ld a,($0065)
+0682    call $09fb
+0685  * ld ($0062),a
+0688  * call $0a05
+068b  * ld ($0063),ix
+068f    jr nc,$0694
+0691  * jp $06f9
+0694  * ld a,(hl)
+0697    cp $00
+0699    jr z,$06aa
+069b  * cp $02
+069d    jr z,$06c2
+069f  * cp $04
+06a1    jr z,$06d4
+06a3  * cp $07
+06a5    jr z,$06e6
+06a7  * jp $06f9
+06aa  * call $1615
+06ad  * call $0bff
+06b0  * cp $ff
+06b2    jr nz,$06b7
+06b4  * jp $06f9
+06b7  * ld ($0061),a
+06ba    call $1615
+06bd  * call $0c73
+06c0  * jr $06f9
+06c2  * call $0fac
+06c5  * cp $ff
+06c7    jr z,$06f9
+06c9  * ld ($0061),a
+06cc    call $1615
+06cf  * call $0fd7
+06d2  * jr $06f9
+06d4  * call $1100
+06d7  * cp $ff
+06d9    jr z,$06f9
+06db  * ld ($0061),a
+06de    call $1615
+06e1  * call $11c5
+06e4  * jr $06f9
+06e6  * ld a,($000e)
+06e9    add a,$02
+06eb    ld c,a
+06ec    ld b,$00
+06ee    add ix,bc
+06f0    ld a,(hl)
+06f3    ld ($0062),a
+06f6    jp $0688
+06f9  * call $0982
+06fc  * jp $056e
+06ff  * call $08a3
+0702  * call $09fb
+0705  * ld ($0062),a
+0708    call $0a05
+070b  * ld ($0063),ix
+070f    ld a,(hl)
+0712    cp $07
+0714    jp z,$07b7
+0717  * cp $00
+0719    jr z,$0722
+071b  * cp $04
+071d    jr z,$0768
+071f  * jp $07b7
+0722  * ld a,$00
+0724    ld ($0061),a
+0727  * call $1615
+072a  * ld a,($0061)
+072d    add a,$d5
+072f    ld l,a
+0730    ld a,$19
+0732    adc a,$00
+0734    ld h,a
+0735    ld a,($0081)
+0738    and (hl)
+0739    jr nz,$075a
+073b  * ld a,($0061)
+073e    add a,$9a
+0740    ld l,a
+0741    ld h,$00
+0743    ld a,($0065)
+0746    cp (hl)
+0747    jr nz,$075a
+0749  * ld a,($000f)
+074c    ld b,a
+074d    ld a,($000e)
+0750    ld c,a
+0751    sla c
+0753    srl b
+0755    rr c
+0757    call $0e23
+075a  * ld a,($0061)
+075d    inc a
+075e    ld ($0061),a
+0761    cp $08
+0763    jr nz,$0727
+0765  * jp $07b7
+0768  * ld a,$00
+076a    ld ($0061),a
+076d  * ld a,($0061)
+0770    add a,$d5
+0772    ld l,a
+0773    ld a,$19
+0775    adc a,$00
+0777    ld h,a
+0778    ld a,($00cc)
+077b    and (hl)
+077c    jr nz,$07ac
+077e  * ld a,($0061)
+0781    add a,$d9
+0783    ld l,a
+0784    ld h,$00
+0786    ld a,($0065)
+0789    cp (hl)
+078a    jr nz,$07ac
+078c  * ld a,($000e)
+078f    ld l,a
+0790    ld a,($000f)
+0793    sla l
+0795    sla l
+0797    rl h
+0799    sla l
+079b    rl h
+079d    sla l
+079f    rl h
+07a1    srl l
+07a3    srl l
+07a5    srl l
+07a7    srl l
+07a9    call $138c
+07ac  * ld a,($0061)
+07af    inc a
+07b0    ld ($0061),a
+07b3    cp $04
+07b5    jr nz,$076d
+07b7  * call $0982
+07ba  * jp $056e
+07bd  * call $08a3
+07c0  * ld a,($000e)
+07c3    cp $01
+07c5    jr nz,$07d8
+07c7  * ld a,($0065)
+07ca    add a,$80
+07cc    ld l,a
+07cd    ld h,$02
+07cf    ld a,($000f)
+07d2    ld (hl),a
+07d3    call $13ab
+07d6  * jr $081e
+07d8  * cp $07
+07da    jr nz,$0803
+07dc  * ld a,($0065)
+07df    add a,$00
+07e1    ld l,a
+07e2    ld h,$03
+07e4    ld a,($000f)
+07e7    ld (hl),a
+07e8    ld a,($0065)
+07eb    call $09fb
+07ee  * ld ($0062),a
+07f1    call $1615
+07f4  * call $0a05
+07f7  * ld ($0063),ix
+07fb    call $1615
+07fe  * call $14d3
+0801  * jr $081e
+0803  * cp $10
+0805    jr nz,$081e
+0807  * ld a,($0065)
+080a    srl a
+080c    srl a
+080e    srl a
+0810    srl a
+0812    add a,$6f
+0814    ld l,a
+0815    ld h,$00
+0817    ld a,($000f)
+081a    ld (hl),a
+081b    call $1567
+081e  * call $0982
+0821  * jp $056e
+0824  * call $08a3
+0827  * add a,$00
+0829    ld l,a
+082a    ld h,$02
+082c    ld a,($000e)
+082f    ld (hl),a
+0830    call $0982
+0833  * call $1615
+0836  * jp $056e
+0839  * call $08a3
+083c  * add a,$80
+083e    ld l,a
+083f    ld h,$03
+0841    ld a,($000e)
+0844    ld (hl),a
+0845    call $1615
+0848  * call $13ab
+084b  * call $0982
+084e  * jp $056e
+0851  * ld a,($000e)
+0854    or a
+0855    jr nz,$085d
+0857  * call $08b1
+085a  * jp $089d
+085d  * cp $01
+085f    jr nz,$089d
+0861  * ld a,($0010)
+0864    add a,$80
+0866    ld l,a
+0867    ld h,$02
+0869    ld b,$10
+086b    ld a,$00
+086d  * call $1615
+0870  * ld (hl),a
+0871    inc hl
+0872    dec b
+0873    jr nz,$086d
+0875  * ld a,($0010)
+0878    add a,$00
+087a    ld l,a
+087b    ld h,$03
+087d    ld b,$10
+087f    ld a,$7f
+0881  * call $1615
+0884  * ld (hl),a
+0885    inc hl
+0886    dec b
+0887    jr nz,$0881
+0889  * ld a,($0010)
+088c    add a,$80
+088e    ld l,a
+088f    ld h,$03
+0891    ld b,$10
+0893    ld a,$40
+0895  * call $1615
+0898  * ld (hl),a
+0899    inc hl
+089a    dec b
+089b    jr nz,$0895
+089d  * call $0982
+08a0  * jp $056e
+08a3  * ld a,($000d)
+08a6    and $0f
+08a8    ld b,a
+08a9    ld a,($0010)
+08ac    add a,b
+08ad    ld ($0065),a
+08b0    ret
+08b1  * call $08c5
+08b4  * ld a,$3f
+08b6    ld ($0081),a
+08b9    call $093b
+08bc  * ld a,$0f
+08be    ld ($00cc),a
+08c1    call $0adc
+08c4  * ret
+08c5  * ld hl,$4000
+08c8    ld de,$4001
+08cb    ld a,$06
+08cd  * call $178b
+08d0  * ld (hl),$28
+08d2    ld (de),a
+08d3  * dec a
+08d4    jp m,$08dd
+08d7  * cp $03
+08d9    jr z,$08d3
+08db  * jr $08cd
+08dd  * call $1615
+08e0  * ld a,$3f
+08e2    ld ($0081),a
+08e5    ret
+08e6  * ld bc,$0917
+08e9    ld hl,$4000
+08ec    ld de,$4001
+08ef  * ld a,(bc)
+08f0    inc bc
+08f1    cp $ff
+08f3    jr z,$08fe
+08f5  * call $178b
+08f8  * ld (hl),a
+08f9    ld a,(bc)
+08fa    inc bc
+08fb    ld (de),a
+08fc    jr $08ef
+08fe  * ld bc,$0932
+0901    ld hl,$4002
+0904    ld de,$4003
+0907  * ld a,(bc)
+0908    inc bc
+0909    cp $ff
+090b    jr z,$0916
+090d  * call $178b
+0910  * ld (hl),a
+0911    ld a,(bc)
+0912    inc bc
+0913    ld (de),a
+0914    jr $0907
+0916  * ret
+093b  * ld hl,$0949
+093e    ld b,$04
+0940  * ld a,(hl)
+0941    ld ($7f11),a
+0944    inc hl
+0945    dec b
+0946    jr nz,$0940
+0948  * ret
+094d  * ld hl,$4000
+0950    call $178b
+0953  * ld (hl),$27
+0955    inc hl
+0956    ld (hl),$30
+0958    dec hl
+0959    call $178b
+095c  * ld (hl),$26
+095e    inc hl
+095f    ld (hl),$f2
+0961    dec hl
+0962    call $178b
+0965  * ld (hl),$27
+0967    inc hl
+0968    ld a,$0a
+096a    ld (hl),a
+096b    ld ($0077),a
+096e    ret
+096f  * ld hl,$000b
+0972    ld (hl),$ff
+0974    inc hl
+0975    ld c,$40
+0977    ld a,$00
+0979  * ld (hl),a
+097a    inc hl
+097b    dec c
+097c    jr nz,$0979
+097e  * ld ($000b),a
+0981    ret
+0982  * ld a,$ff
+0984    ld ($000b),a
+0987    ld hl,$000d
+098a    ld ix,$0011
+098e    ld a,($000c)
+0991    dec a
+0992    ld ($000c),a
+0995    jr z,$09a6
+0997  * sla a
+0999    sla a
+099b    ld c,a
+099c  * ld a,(hl)
+099f    ld (hl),a
+09a0    inc ix
+09a2    inc hl
+09a3    dec c
+09a4    jr nz,$099c
+09a6  * ld a,$00
+09a8    ld ($000b),a
+09ab    ret
+09ac  * ld hl,$0200
+09af    ld a,$00
+09b1    ld c,$80
+09b3  * ld (hl),a
+09b4    inc hl
+09b5    dec c
+09b6    jr nz,$09b3
+09b8  * ld hl,$0280
+09bb    ld a,$00
+09bd    ld c,$80
+09bf  * ld (hl),a
+09c0    inc hl
+09c1    dec c
+09c2    jr nz,$09bf
+09c4  * ld hl,$0300
+09c7    ld a,$7f
+09c9    ld c,$80
+09cb  * ld (hl),a
+09cc    inc hl
+09cd    dec c
+09ce    jr nz,$09cb
+09d0  * ld hl,$0380
+09d3    ld a,$40
+09d5    ld c,$80
+09d7  * ld (hl),a
+09d8    inc hl
+09d9    dec c
+09da    jr nz,$09d7
+09dc  * ld hl,$006f
+09df    ld a,$7f
+09e1    ld c,$08
+09e3  * ld (hl),a
+09e4    inc hl
+09e5    dec c
+09e6    jr nz,$09e3
+09e8  * ret
+09e9  * ld a,$ff
+09eb    ld ($0532),a
+09ee    ld hl,$0100
+09f1    ld a,$ff
+09f3    ld c,$fc
+09f5  * ld (hl),a
+09f6    inc hl
+09f7    dec c
+09f8    jr nz,$09f5
+09fa  * ret
+09fb  * add a,$00
+09fd    ld l,a
+09fe    ld h,$02
+0a00    ld a,(hl)
+0a01    call $1615
+0a04  * ret
+0a05  * push hl
+0a06    push bc
+0a07    push de
+0a08    push iy
+0a0a    ld iy,$0100
+0a0e    ld b,$2a
+0a10    ld c,a
+0a11    ld d,$00
+0a13    ld e,$06
+0a15  * ld a,(hl)
+0a18    cp $00
+0a1a    jr nz,$0a2e
+0a1c  * ld a,(hl)
+0a1f    cp c
+0a20    jr nz,$0a2e
+0a22  * ld b,(hl)
+0a25    ld c,(hl)
+0a28    push bc
+0a29    pop ix
+0a2b    or a
+0a2c    jr $0a9b
+0a2e  * call $1615
+0a31  * add iy,de
+0a33    dec b
+0a34    jr nz,$0a15
+0a36  * ld a,($0532)
+0a39    cp c
+0a3a    jr nz,$0a43
+0a3c  * ld ix,$050a
+0a40    or a
+0a41    jr $0a9b
+0a43  * ld a,c
+0a44    ld ($0501),a
+0a47    ld a,$00
+0a49    ld ($0500),a
+0a4c    ld a,($0508)
+0a4f    ld ($0509),a
+0a52    call $1699
+0a55  * jr nc,$0a67
+0a57  * ld a,($0509)
+0a5a    ld ($0508),a
+0a5d    call $1681
+0a60  * ld ix,$0000
+0a64    scf
+0a65    jr $0a9b
+0a67  * ld BC,($0502)
+0a6b    ld a,($0504)
+0a6e    sla b
+0a70    rla
+0a71    scf
+0a72    rr b
+0a74    ld ($0508),a
+0a77    call $1681
+0a7a  * ld hl,$050a
+0a7d    ld d,$28
+0a7f  * call $1760
+0a82  * ld (hl),a
+0a83    inc hl
+0a84    dec d
+0a85    jr nz,$0a7f
+0a87  * ld a,($0501)
+0a8a    ld ($0532),a
+0a8d    ld a,($0509)
+0a90    ld ($0508),a
+0a93    call $1681
+0a96  * ld ix,$050a
+0a9a    or a
+0a9b  * pop iy
+0a9d    pop de
+0a9e    pop bc
+0a9f    pop hl
+0aa0    ret
+0aa1  * ld b,a
+0aa2    call $0ab9
+0aa5  * ld a,b
+0aa6    add a,$d5
+0aa8    ld l,a
+0aa9    ld a,$19
+0aab    adc a,$00
+0aad    ld h,a
+0aae    ld a,($0081)
+0ab1    or (hl)
+0ab2    ld ($0081),a
+0ab5    call $1615
+0ab8  * ret
+0ab9  * ld hl,$4000
+0abc    cp $03
+0abe    jr c,$0ac1
+0ac0  * inc a
+0ac1  * call $178b
+0ac4  * ld (hl),$28
+0ac6    inc hl
+0ac7    ld (hl),a
+0ac8    ret
+0ac9  * ld a,($0061)
+0acc    add a,$dd
+0ace    ld l,a
+0acf    ld a,$19
+0ad1    adc a,$00
+0ad3    ld h,a
+0ad4    ld a,($0081)
+0ad7    and (hl)
+0ad8    ld ($0081),a
+0adb    ret
+0adc  * ld hl,$4000
+0adf    ld (hl),$27
+0ae1    inc hl
+0ae2    ld a,($0077)
+0ae5    and $fa
+0ae7    ld (hl),a
+0ae8    ld ($0077),a
+0aeb    ld a,($0081)
+0aee    or $20
+0af0    ld ($0081),a
+0af3    ret
+0af4  * ld a,($0061)
+0af7    call $0b11
+0afa  * ld ix,($0063)
+0afe    ld a,(hl)
+0b01    or a
+0b02    jr z,$0b10
+0b04  * ld a,(hl)
+0b07    cp $03
+0b09    jr c,$0b10
+0b0b  * ld a,$03
+0b0d    call $0b11
+0b10  * ret
+0b11  * ld b,a
+0b12    sla a
+0b14    sla a
+0b16    sla a
+0b18    sla a
+0b1a    sla a
+0b1c    add a,$90
+0b1e    or $0f
+0b20    ld ($7f11),a
+0b23    ld a,b
+0b24    add a,$d5
+0b26    ld l,a
+0b27    ld a,$19
+0b29    adc a,$00
+0b2b    ld h,a
+0b2c    ld a,($00cc)
+0b2f    or (hl)
+0b30    ld ($00cc),a
+0b33    ret
+0b34  * add a,$dd
+0b36    ld l,a
+0b37    ld a,$19
+0b39    adc a,$00
+0b3b    ld h,a
+0b3c    ld a,($00cc)
+0b3f    and (hl)
+0b40    ld ($00cc),a
+0b43    ret
+0b44  * ld a,($0061)
+0b47    add a,$82
+0b49    ld l,a
+0b4a    ld h,$00
+0b4c    ld a,($0062)
+0b4f    ld (hl),a
+0b50    call $1615
+0b53  * ld a,($0061)
+0b56    add a,$88
+0b58    ld l,a
+0b59    ld h,$00
+0b5b    ld a,(hl)
+0b5e    ld (hl),a
+0b5f    call $1615
+0b62  * ld a,($0061)
+0b65    add a,$8e
+0b67    ld l,a
+0b68    ld h,$00
+0b6a    ld a,($000e)
+0b6d    ld (hl),a
+0b6e    call $1615
+0b71  * ld a,($0061)
+0b74    add a,$94
+0b76    ld l,a
+0b77    ld h,$00
+0b79    ld a,($000f)
+0b7c    ld (hl),a
+0b7d    call $1615
+0b80  * ld a,($0061)
+0b83    add a,$a0
+0b85    ld l,a
+0b86    ld h,$00
+0b88    ld a,(hl)
+0b8b    ld (hl),a
+0b8c    call $1615
+0b8f  * ld a,($0065)
+0b92    ld b,a
+0b93    ld a,($0061)
+0b96    add a,$9a
+0b98    ld l,a
+0b99    ld h,$00
+0b9b    ld (hl),b
+0b9c    call $1615
+0b9f  * ld a,($0061)
+0ba2    add a,$a6
+0ba4    ld l,a
+0ba5    ld h,$00
+0ba7    ld a,(hl)
+0baa    or a
+0bab    jr nz,$0bb1
+0bad  * ld a,(hl)
+0bb0    ld (hl),a
+0bb1  * ret
+0bb2  * ld ($0079),a
+0bb5    add a,$cd
+0bb7    ld l,a
+0bb8    ld h,$00
+0bba    ld a,($0062)
+0bbd    ld (hl),a
+0bbe    call $1615
+0bc1  * ld a,($0079)
+0bc4    add a,$d1
+0bc6    ld l,a
+0bc7    ld h,$00
+0bc9    ld a,($000e)
+0bcc    ld (hl),a
+0bcd    call $1615
+0bd0  * ld a,($0079)
+0bd3    add a,$d5
+0bd5    ld l,a
+0bd6    ld h,$00
+0bd8    ld a,($000f)
+0bdb    ld (hl),a
+0bdc    call $1615
+0bdf  * ld a,($0079)
+0be2    add a,$dd
+0be4    ld l,a
+0be5    ld h,$00
+0be7    ld a,(hl)
+0bea    ld (hl),a
+0beb    call $1615
+0bee  * ld a,($0065)
+0bf1    ld b,a
+0bf2    ld a,($0079)
+0bf5    add a,$d9
+0bf7    ld l,a
+0bf8    ld h,$00
+0bfa    ld (hl),b
+0bfb    call $1615
+0bfe  * ret
+0bff  * call $1615
+0c02  * xor a
+0c03    ld ($0067),a
+0c06    bit 0,(ix+37)
+0c0a    jr z,$0c30
+0c0c  * ld a,($0081)
+0c0f    ld b,a
+0c10    ld a,($0062)
+0c13    ld c,$00
+0c15    ld d,$06
+0c17    ld hl,$0082
+0c1a  * srl b
+0c1c    jr c,$0c2b
+0c1e  * cp (hl)
+0c1f    jr nz,$0c2b
+0c21  * ld a,(hl)
+0c24    ld ($0067),a
+0c27    ld a,c
+0c28    jp $0c72
+0c2b  * inc c
+0c2c    inc hl
+0c2d    dec d
+0c2e    jr nz,$0c1a
+0c30  * ld a,($0081)
+0c33    or a
+0c34    jr z,$0c40
+0c36  * ld b,a
+0c37    ld a,$00
+0c39  * rr b
+0c3b    jr c,$0c72
+0c3d  * inc a
+0c3e    jr $0c39
+0c40  * call $1615
+0c43  * ld a,(hl)
+0c46    ld hl,$00a0
+0c49    ld c,$00
+0c4b    ld d,$06
+0c4d  * cp (hl)
+0c4e    jr c,$0c68
+0c50  * inc hl
+0c51    inc c
+0c52    dec d
+0c53    jr nz,$0c4d
+0c55  * ld hl,$00a0
+0c58    ld c,$00
+0c5a    ld d,$06
+0c5c  * cp (hl)
+0c5d    jr z,$0c68
+0c5f  * inc hl
+0c60    inc c
+0c61    dec d
+0c62    jr nz,$0c5c
+0c64  * ld a,$ff
+0c66    jr $0c72
+0c68  * ld a,c
+0c69    ld ($0061),a
+0c6c    call $0aa1
+0c6f  * ld a,($0061)
+0c72  * ret
+0c73  * call $0b44
+0c76  * ld a,($0067)
+0c79    bit 0,a
+0c7b    jr z,$0c8a
+0c7d  * bit 1,a
+0c7f    jr z,$0c84
+0c81  * jp $0d1f
+0c84  * ld a,($0061)
+0c87    call $0ab9
+0c8a  * inc ix
+0c8c    inc ix
+0c8e    ld a,($0061)
+0c91    cp $03
+0c93    jr c,$0c9c
+0c95  * add a,$b1
+0c97    ld hl,$4002
+0c9a    jr $0ca1
+0c9c  * add a,$b4
+0c9e    ld hl,$4000
+0ca1  * call $178b
+0ca4  * ld (hl),a
+0ca5    inc hl
+0ca6    ld (hl),$00
+0ca8    ld a,($0061)
+0cab    cp $05
+0cad    jr nz,$0cba
+0caf  * ld hl,$4000
+0cb2    call $178b
+0cb5  * ld (hl),$2b
+0cb7    inc hl
+0cb8    ld (hl),$00
+0cba  * ld a,($0061)
+0cbd    cp $03
+0cbf    jr c,$0cc8
+0cc1  * add a,$2d
+0cc3    ld hl,$4002
+0cc6    jr $0ccd
+0cc8  * add a,$30
+0cca    ld hl,$4000
+0ccd  * ld c,$18
+0ccf  * call $1615
+0cd2  * ld d,(hl)
+0cd5    inc ix
+0cd7    call $178b
+0cda  * ld (hl),a
+0cdb    inc hl
+0cdc    add a,$04
+0cde    ld (hl),d
+0cdf    dec hl
+0ce0    dec c
+0ce1    jr nz,$0ccf
+0ce3  * ld a,($0061)
+0ce6    cp $03
+0ce8    jr c,$0cee
+0cea  * add a,$ad
+0cec    jr $0cf0
+0cee  * add a,$b0
+0cf0  * ld d,(hl)
+0cf3    call $178b
+0cf6  * ld (hl),a
+0cf7    inc hl
+0cf8    ld (hl),d
+0cf9    call $1615
+0cfc  * call $0e46
+0cff  * ld ix,($0063)
+0d03    ld a,($0061)
+0d06    cp $03
+0d08    jr c,$0d11
+0d0a  * add a,$b1
+0d0c    ld hl,$4002
+0d0f    jr $0d16
+0d11  * add a,$b4
+0d13    ld hl,$4000
+0d16  * call $178b
+0d19  * ld (hl),a
+0d1a    inc hl
+0d1b    ld a,(hl)
+0d1e    ld (hl),a
+0d1f  * call $0d42
+0d22  * ld a,($0067)
+0d25    bit 1,a
+0d27    jr nz,$0d3e
+0d29  * ld hl,$4000
+0d2c    ld a,($0061)
+0d2f    cp $03
+0d31    jr c,$0d34
+0d33  * inc a
+0d34  * or (hl)
+0d37    call $178b
+0d3a  * ld (hl),$28
+0d3c    inc hl
+0d3d    ld (hl),a
+0d3e  * call $0ac9
+0d41  * ret
+0d42  * ld ix,($0063)
+0d46    ld a,($0061)
+0d49    add a,$8e
+0d4b    ld l,a
+0d4c    ld h,$00
+0d4e    ld a,(hl)
+0d4f    add a,(hl)
+0d52    ld ($0069),a
+0d55    call $1615
+0d58  * xor a
+0d59    ld ($0068),a
+0d5c    ld a,($0065)
+0d5f    add a,$80
+0d61    ld l,a
+0d62    ld h,$03
+0d64    ld a,(hl)
+0d65    cp $40
+0d67    jr z,$0d9b
+0d69  * rlca
+0d6a    bit 7,a
+0d6c    jr z,$0d84
+0d6e  * sub $80
+0d70    rlca
+0d71    ld b,(hl)
+0d74    call $1795
+0d77  * ld a,c
+0d78    ld ($0068),a
+0d7b    ld a,($0069)
+0d7e    add a,b
+0d7f    ld ($0069),a
+0d82    jr $0d9b
+0d84  * ld c,a
+0d85    ld a,$7f
+0d87    sub c
+0d88    rlca
+0d89    ld b,(hl)
+0d8c    call $1795
+0d8f  * xor a
+0d90    sub c
+0d91    ld ($0068),a
+0d94    ld a,($0069)
+0d97    sbc a,b
+0d98    ld ($0069),a
+0d9b  * call $1615
+0d9e  * call $1615
+0da1  * ld a,(hl)
+0da4    or a
+0da5    jr z,$0dd3
+0da7  * bit 7,a
+0da9    jr nz,$0dbe
+0dab  * rlca
+0dac    ld b,a
+0dad    ld a,($0068)
+0db0    add a,b
+0db1    ld ($0068),a
+0db4    ld a,($0069)
+0db7    adc a,$00
+0db9    ld ($0069),a
+0dbc    jr $0dd3
+0dbe  * ld b,a
+0dbf    ld a,$80
+0dc1    sub b
+0dc2    rlca
+0dc3    ld b,a
+0dc4    ld a,($0068)
+0dc7    sub b
+0dc8    ld ($0068),a
+0dcb    ld a,($0069)
+0dce    sbc a,$00
+0dd0    ld ($0069),a
+0dd3  * call $1615
+0dd6  * ld a,($0069)
+0dd9    sla a
+0ddb    add a,$c5
+0ddd    ld l,a
+0dde    ld a,$17
+0de0    adc a,$00
+0de2    ld h,a
+0de3    ld a,(hl)
+0de4    ld ($0079),a
+0de7    ld ($007b),a
+0dea    ld c,a
+0deb    inc hl
+0dec    ld a,(hl)
+0ded    ld ($007a),a
+0df0    and $07
+0df2    ld b,a
+0df3    ld ($007c),a
+0df6    ld de,$010f
+0df9    call $17a7
+0dfc  * call $1615
+0dff  * ld l,d
+0e00    ld h,c
+0e01    ld BC,($007b)
+0e05    scf
+0e06    ccf
+0e07    sbc hl,BC
+0e09    ld b,l
+0e0a    ld a,($0068)
+0e0d    call $1795
+0e10  * call $1615
+0e13  * ld c,b
+0e14    ld b,$00
+0e16    ld hl,($0079)
+0e19    add hl,bc
+0e1a    push hl
+0e1b    pop bc
+0e1c    call $0e23
+0e1f  * call $1615
+0e22  * ret
+0e23  * ld a,($0061)
+0e26    cp $03
+0e28    jr c,$0e31
+0e2a  * add a,$a1
+0e2c    ld hl,$4002
+0e2f    jr $0e36
+0e31  * add a,$a4
+0e33    ld hl,$4000
+0e36  * call $178b
+0e39  * ld (hl),a
+0e3a    inc hl
+0e3b    sub $04
+0e3d    ld (hl),b
+0e3e    dec hl
+0e3f    call $178b
+0e42  * ld (hl),a
+0e43    inc hl
+0e44    ld (hl),c
+0e45    ret
+0e46  * ld a,($0065)
+0e49    srl a
+0e4b    srl a
+0e4d    srl a
+0e4f    srl a
+0e51    add a,$6f
+0e53    ld l,a
+0e54    ld h,$00
+0e56    ld a,(hl)
+0e57    sla a
+0e59    ld b,a
+0e5a    ld a,($0065)
+0e5d    add a,$00
+0e5f    ld l,a
+0e60    ld h,$03
+0e62    ld a,(hl)
+0e63    sla a
+0e65    call $1795
+0e68  * call $1615
+0e6b  * ld a,($0061)
+0e6e    add a,$94
+0e70    ld l,a
+0e71    ld h,$00
+0e73    ld a,(hl)
+0e74    sla a
+0e76    call $1795
+0e79  * ld a,b
+0e7a    ld ($006a),a
+0e7d    call $1615
+0e80  * ld ix,($0063)
+0e84    ld a,(hl)
+0e87    add a,$65
+0e89    ld l,a
+0e8a    ld a,$1a
+0e8c    adc a,$00
+0e8e    ld h,a
+0e8f    ld b,(hl)
+0e90    ld a,($006a)
+0e93    call $1795
+0e96  * ld a,b
+0e97    srl a
+0e99    add a,$e5
+0e9b    ld l,a
+0e9c    ld a,$19
+0e9e    adc a,$00
+0ea0    ld h,a
+0ea1    ld a,(hl)
+0ea2    ld ($006e),a
+0ea5    call $1615
+0ea8  * ld ix,($0063)
+0eac    ld a,(hl)
+0eaf    and $07
+0eb1    cp $04
+0eb3    jr nc,$0eb8
+0eb5  * jp $0f3e
+0eb8  * ld a,(hl)
+0ebb    add a,$65
+0ebd    ld l,a
+0ebe    ld a,$1a
+0ec0    adc a,$00
+0ec2    ld h,a
+0ec3    ld b,(hl)
+0ec4    ld a,($006a)
+0ec7    call $1795
+0eca  * ld a,b
+0ecb    srl a
+0ecd    add a,$e5
+0ecf    ld l,a
+0ed0    ld a,$19
+0ed2    adc a,$00
+0ed4    ld h,a
+0ed5    ld a,(hl)
+0ed6    ld ($006c),a
+0ed9    call $1615
+0edc  * ld ix,($0063)
+0ee0    ld a,(hl)
+0ee3    and $07
+0ee5    cp $05
+0ee7    jr c,$0f3e
+0ee9  * ld a,(hl)
+0eec    add a,$65
+0eee    ld l,a
+0eef    ld a,$1a
+0ef1    adc a,$00
+0ef3    ld h,a
+0ef4    ld b,(hl)
+0ef5    ld a,($006a)
+0ef8    call $1795
+0efb  * ld a,b
+0efc    srl a
+0efe    add a,$e5
+0f00    ld l,a
+0f01    ld a,$19
+0f03    adc a,$00
+0f05    ld h,a
+0f06    ld a,(hl)
+0f07    ld ($006d),a
+0f0a    call $1615
+0f0d  * ld ix,($0063)
+0f11    ld a,(hl)
+0f14    and $07
+0f16    cp $07
+0f18    jr nz,$0f3e
+0f1a  * ld a,(hl)
+0f1d    add a,$65
+0f1f    ld l,a
+0f20    ld a,$1a
+0f22    adc a,$00
+0f24    ld h,a
+0f25    ld b,(hl)
+0f26    ld a,($006a)
+0f29    call $1795
+0f2c  * ld a,b
+0f2d    srl a
+0f2f    add a,$e5
+0f31    ld l,a
+0f32    ld a,$19
+0f34    adc a,$00
+0f36    ld h,a
+0f37    ld a,(hl)
+0f38    ld ($006b),a
+0f3b    call $1615
+0f3e  * ld a,($0061)
+0f41    cp $03
+0f43    jr nc,$0f4d
+0f45  * add a,$4c
+0f47    ld c,a
+0f48    ld hl,$4000
+0f4b    jr $0f53
+0f4d  * add a,$49
+0f4f    ld c,a
+0f50    ld hl,$4002
+0f53  * call $1615
+0f56  * ld ix,($0063)
+0f5a    ld a,(hl)
+0f5d    and $07
+0f5f    ld b,a
+0f60    call $178b
+0f63  * ld (hl),c
+0f64    inc hl
+0f65    ld a,($006e)
+0f68    ld (hl),a
+0f69    dec hl
+0f6a    call $1615
+0f6d  * dec c
+0f6e    dec c
+0f6f    dec c
+0f70    dec c
+0f71    ld a,b
+0f72    cp $04
+0f74    jr c,$0fab
+0f76  * call $178b
+0f79  * ld (hl),c
+0f7a    inc hl
+0f7b    ld a,($006c)
+0f7e    ld (hl),a
+0f7f    dec hl
+0f80    call $1615
+0f83  * dec c
+0f84    dec c
+0f85    dec c
+0f86    dec c
+0f87    ld a,b
+0f88    cp $05
+0f8a    jr c,$0fab
+0f8c  * call $178b
+0f8f  * ld (hl),c
+0f90    inc hl
+0f91    ld a,($006d)
+0f94    ld (hl),a
+0f95    dec hl
+0f96    call $1615
+0f99  * dec c
+0f9a    dec c
+0f9b    dec c
+0f9c    dec c
+0f9d    ld a,b
+0f9e    cp $07
+0fa0    jr nz,$0fab
+0fa2  * call $178b
+0fa5  * ld (hl),c
+0fa6    inc hl
+0fa7    ld a,($006b)
+0faa    ld (hl),a
+0fab  * ret
+0fac  * ld a,(hl)
+0faf    cp $02
+0fb1    jr z,$0fb6
+0fb3  * jp $0fd6
+0fb6  * ld a,($0081)
+0fb9    bit 5,a
+0fbb    jr nz,$0fcc
+0fbd  * ld a,($00a5)
+0fc0    cp (hl)
+0fc3    jr nc,$0fcc
+0fc5  * jr z,$0fcc
+0fc7  * ld a,$ff
+0fc9    jp $0fd6
+0fcc  * ld a,$05
+0fce    call $0aa1
+0fd1  * ld a,$05
+0fd3    jp $0fd6
+0fd6  * ret
+0fd7  * ld a,(hl)
+0fda    cp $02
+0fdc    jp z,$0fe0
+0fdf  * ret
+0fe0  * ld a,($000e)
+0fe3    ld ($0093),a
+0fe6    ld a,($000f)
+0fe9    ld ($0099),a
+0fec    ld a,(hl)
+0fef    ld ($00a5),a
+0ff2    ld a,$02
+0ff4    ld ($008d),a
+0ff7    ld a,($0062)
+0ffa    ld ($0087),a
+0ffd    ld a,$01
+0fff    ld ($0500),a
+1002    ld a,(hl)
+1005    ld ($0501),a
+1008    call $1699
+100b  * jp c,$1071
+100e  * ld a,($0502)
+1011    ld ($00ad),a
+1014    ld a,($0503)
+1017    ld ($00ae),a
+101a    ld a,($0504)
+101d    ld ($00af),a
+1020    exx
+1021    ld BC,($0502)
+1025    ld a,($0504)
+1028    sla b
+102a    rla
+102b    scf
+102c    rr b
+102e    ld ($0508),a
+1031    call $1681
+1034  * call $1760
+1037  * ld ($00bd),a
+103a    call $1760
+103d  * ld ($00bc),a
+1040    ld hl,$4000
+1043    ld de,$4001
+1046    exx
+1047    call $10ad
+104a  * ld a,($0093)
+104d    call $1072
+1050  * ld hl,$4000
+1053    call $178b
+1056  * ld (hl),$2b
+1058    inc hl
+1059    ld (hl),$80
+105b    ld hl,$4002
+105e    call $178b
+1061  * ld (hl),$b6
+1063    inc hl
+1064    ld a,(hl)
+1067    ld (hl),a
+1068    ld hl,$1629
+106b    ld ($1624),hl
+106e    call $0ac9
+1071  * ret
+1072  * srl a
+1074    and $fe
+1076    add a,$e5
+1078    ld c,a
+1079    ld a,$1a
+107b    adc a,$00
+107d    ld b,a
+107e    ld hl,$4000
+1081    ld de,$4001
+1084    call $178b
+1087  * ld a,($0077)
+108a    and $fe
+108c    ld (hl),$27
+108e    ld (de),a
+108f    call $178b
+1092  * ld a,(bc)
+1093    inc bc
+1094    ld (hl),$24
+1096    ld (de),a
+1097    call $178b
+109a  * ld a,(bc)
+109b    ld (hl),$25
+109d    ld (de),a
+109e    call $178b
+10a1  * ld a,($0077)
+10a4    or $05
+10a6    ld ($0077),a
+10a9    ld (hl),$27
+10ab    ld (de),a
+10ac    ret
+10ad  * ld a,($0065)
+10b0    add a,$00
+10b2    ld l,a
+10b3    ld h,$03
+10b5    ld a,(hl)
+10b6    inc a
+10b7    ld c,a
+10b8    ld b,$00
+10ba    sla c
+10bc    rl b
+10be    ld a,($0099)
+10c1    inc a
+10c2    ld e,a
+10c3    ld d,$00
+10c5    sla e
+10c7    rl d
+10c9    call $17a7
+10cc  * ld b,c
+10cd    ld c,d
+10ce    push ix
+10d0    ld ix,$0480
+10d4    ld hl,$8000
+10d7    ld d,$80
+10d9  * ld (hl),h
+10dc    dec ix
+10de    scf
+10df    ccf
+10e0    sbc hl,BC
+10e2    dec d
+10e3    jr nz,$10d9
+10e5  * call $1615
+10e8  * ld ix,$0480
+10ec    ld hl,$8000
+10ef    ld d,$80
+10f1  * ld (hl),h
+10f4    inc ix
+10f6    add hl,bc
+10f7    dec d
+10f8    jr nz,$10f1
+10fa  * call $1615
+10fd  * pop ix
+10ff    ret
+1100  * call $1615
+1103  * xor a
+1104    ld ($0067),a
+1107    ld a,(hl)
+110a    or a
+110b    jr z,$114c
+110d  * ld a,($00cc)
+1110    bit 3,a
+1112    jr nz,$1127
+1114  * ld a,(hl)
+1117    ld iy,$00dd
+111b    cp (hl)
+111e    jr c,$1127
+1120  * jr z,$1127
+1122  * ld a,$ff
+1124    jp $11c4
+1127  * ld a,(hl)
+112a    cp $03
+112c    jr c,$1148
+112e  * ld a,($00cc)
+1131    bit 2,a
+1133    jr nz,$1148
+1135  * ld a,(hl)
+1138    ld iy,$00dd
+113c    cp (hl)
+113f    jr c,$1148
+1141  * jr z,$1148
+1143  * ld a,$ff
+1145    jp $11c4
+1148  * ld a,$03
+114a    jr $11c4
+114c  * bit 0,(ix+15)
+1150    jr z,$1175
+1152  * ld a,($00cc)
+1155    ld b,a
+1156    ld a,($0062)
+1159    ld c,$00
+115b    ld d,$03
+115d    ld hl,$00cd
+1160  * srl b
+1162    jr c,$1170
+1164  * cp (hl)
+1165    jr nz,$1170
+1167  * ld a,(hl)
+116a    ld ($0067),a
+116d    ld a,c
+116e    jr $11c4
+1170  * inc c
+1171    inc hl
+1172    dec d
+1173    jr nz,$1160
+1175  * ld a,($00cc)
+1178    ld b,a
+1179    ld c,$00
+117b    ld d,$03
+117d  * srl b
+117f    jr nc,$1185
+1181  * ld a,c
+1182    jp $11c4
+1185  * inc c
+1186    dec d
+1187    jr nz,$117d
+1189  * ld a,(hl)
+118c    ld iy,$00dd
+1190    ld c,$00
+1192    cp (hl)
+1195    jr c,$11ba
+1197  * inc c
+1198    cp (hl)
+119b    jr c,$11ba
+119d  * inc c
+119e    cp (hl)
+11a1    jr c,$11ba
+11a3  * ld c,$00
+11a5    cp (hl)
+11a8    jr z,$11ba
+11aa  * inc c
+11ab    cp (hl)
+11ae    jr z,$11ba
+11b0  * inc c
+11b1    cp (hl)
+11b4    jr z,$11ba
+11b6  * ld a,$ff
+11b8    jr $11c4
+11ba  * ld a,c
+11bb    ld ($0061),a
+11be    call $0b11
+11c1  * ld a,($0061)
+11c4  * ret
+11c5  * ld a,($0061)
+11c8    call $0bb2
+11cb  * ld a,($0061)
+11ce    cp $03
+11d0    jr nz,$11de
+11d2  * ld a,(hl)
+11d5    cp $03
+11d7    jr c,$11de
+11d9  * ld a,$02
+11db    call $0bb2
+11de  * ld a,($0067)
+11e1    and $03
+11e3    cp $03
+11e5    jr nz,$11ed
+11e7  * call $1272
+11ea  * jp $1216
+11ed  * ld a,($0061)
+11f0    call $0b11
+11f3  * ld a,(hl)
+11f6    or a
+11f7    jr z,$120a
+11f9  * ld a,(hl)
+11fc    cp $03
+11fe    jr c,$120a
+1200  * ld a,$02
+1202    call $0b11
+1205  * ld a,$02
+1207    call $0b34
+120a  * call $1272
+120d  * call $1217
+1210  * ld a,($0061)
+1213    call $0b34
+1216  * ret
+1217  * ld a,($0065)
+121a    srl a
+121c    srl a
+121e    srl a
+1220    srl a
+1222    add a,$6f
+1224    ld l,a
+1225    ld h,$00
+1227    ld a,(hl)
+1228    sla a
+122a    ld b,a
+122b    ld a,($0065)
+122e    add a,$00
+1230    ld l,a
+1231    ld h,$03
+1233    ld a,(hl)
+1234    sla a
+1236    call $1795
+1239  * call $1615
+123c  * ld a,($0061)
+123f    add a,$d5
+1241    ld l,a
+1242    ld h,$00
+1244    ld a,(hl)
+1245    sla a
+1247    call $1795
+124a  * call $1615
+124d  * ld a,b
+124e    ld ($006a),a
+1251    srl a
+1253    srl a
+1255    srl a
+1257    srl a
+1259    ld b,a
+125a    ld a,$0f
+125c    sub b
+125d    ld b,a
+125e    ld a,($0061)
+1261    sla a
+1263    sla a
+1265    sla a
+1267    sla a
+1269    sla a
+126b    add a,$90
+126d    or b
+126e    ld ($7f11),a
+1271    ret
+1272  * ld a,($0061)
+1275    cp $03
+1277    jr nz,$12a4
+1279  * ld ix,($0063)
+127d    ld a,(hl)
+1280    cp $03
+1282    jr nc,$1297
+1284  * ld a,(hl)
+1287    dec a
+1288    sla a
+128a    sla a
+128c    or (hl)
+128f    or $e0
+1291    ld ($7f11),a
+1294    jp $1388
+1297  * ld a,(hl)
+129a    dec a
+129b    sla a
+129d    sla a
+129f    or $e3
+12a1    ld ($7f11),a
+12a4  * ld ix,($0063)
+12a8    ld a,($0061)
+12ab    cp $03
+12ad    jr nz,$12b0
+12af  * dec a
+12b0  * add a,$d1
+12b2    ld l,a
+12b3    ld h,$00
+12b5    ld a,(hl)
+12b6    add a,(hl)
+12b9    ld ($0069),a
+12bc    call $1615
+12bf  * xor a
+12c0    ld ($0068),a
+12c3    ld a,($0065)
+12c6    add a,$80
+12c8    ld l,a
+12c9    ld h,$03
+12cb    ld a,(hl)
+12cc    cp $40
+12ce    jr z,$1302
+12d0  * rlca
+12d1    bit 7,a
+12d3    jr z,$12eb
+12d5  * sub $80
+12d7    rlca
+12d8    ld b,(hl)
+12db    call $1795
+12de  * ld a,c
+12df    ld ($0068),a
+12e2    ld a,($0069)
+12e5    add a,b
+12e6    ld ($0069),a
+12e9    jr $1302
+12eb  * ld c,a
+12ec    ld a,$7f
+12ee    sub c
+12ef    rlca
+12f0    ld b,(hl)
+12f3    call $1795
+12f6  * xor a
+12f7    sub c
+12f8    ld ($0068),a
+12fb    ld a,($0069)
+12fe    sbc a,b
+12ff    ld ($0069),a
+1302  * call $1615
+1305  * call $1615
+1308  * ld a,(hl)
+130b    or a
+130c    jr z,$133a
+130e  * bit 7,a
+1310    jr nz,$1325
+1312  * rlca
+1313    ld b,a
+1314    ld a,($0068)
+1317    add a,b
+1318    ld ($0068),a
+131b    ld a,($0069)
+131e    adc a,$00
+1320    ld ($0069),a
+1323    jr $133a
+1325  * ld b,a
+1326    ld a,$80
+1328    sub b
+1329    rlca
+132a    ld b,a
+132b    ld a,($0068)
+132e    sub b
+132f    ld ($0068),a
+1332    ld a,($0069)
+1335    sbc a,$00
+1337    ld ($0069),a
+133a  * call $1615
+133d  * ld a,($0069)
+1340    sla a
+1342    add a,$cd
+1344    ld l,a
+1345    ld a,$18
+1347    adc a,$00
+1349    ld h,a
+134a    ld a,(hl)
+134b    ld ($0079),a
+134e    ld c,a
+134f    inc hl
+1350    ld a,(hl)
+1351    ld ($007a),a
+1354    ld b,a
+1355    ld de,$00f2
+1358    call $17a7
+135b  * call $1615
+135e  * ld b,c
+135f    ld c,d
+1360    ld hl,($0079)
+1363    or a
+1364    sbc hl,BC
+1366    ld b,l
+1367    ld a,($0068)
+136a    call $1795
+136d  * call $1615
+1370  * ld c,b
+1371    ld b,$00
+1373    ld hl,($0079)
+1376    or a
+1377    sbc hl,BC
+1379    add hl,hl
+137a    add hl,hl
+137b    add hl,hl
+137c    add hl,hl
+137d    srl l
+137f    srl l
+1381    srl l
+1383    srl l
+1385    call $138c
+1388  * call $1615
+138b  * ret
+138c  * ld a,($0061)
+138f    cp $03
+1391    jr nz,$1394
+1393  * dec a
+1394  * sla a
+1396    sla a
+1398    sla a
+139a    sla a
+139c    sla a
+139e    or $80
+13a0    or l
+13a1    ld ($7f11),a
+13a4    ld a,h
+13a5    and $3f
+13a7    ld ($7f11),a
+13aa    ret
+13ab  * ld a,($0065)
+13ae    call $09fb
+13b1  * ld ($0062),a
+13b4    call $0a05
+13b7  * ld ($0063),ix
+13bb    ld a,(hl)
+13be    cp $00
+13c0    jr z,$13c9
+13c2  * cp $04
+13c4    jr z,$1401
+13c6  * jp $1436
+13c9  * ld a,$00
+13cb    ld ($0061),a
+13ce  * call $1615
+13d1  * ld a,($0061)
+13d4    add a,$dd
+13d6    ld l,a
+13d7    ld a,$19
+13d9    adc a,$00
+13db    ld h,a
+13dc    ld a,($0081)
+13df    and (hl)
+13e0    jr z,$13f3
+13e2  * ld a,($0061)
+13e5    add a,$9a
+13e7    ld l,a
+13e8    ld h,$00
+13ea    ld a,($0065)
+13ed    cp (hl)
+13ee    jr nz,$13f3
+13f0  * call $0d42
+13f3  * ld a,($0061)
+13f6    inc a
+13f7    ld ($0061),a
+13fa    cp $06
+13fc    jr nz,$13ce
+13fe  * jp $1436
+1401  * ld a,$00
+1403    ld ($0061),a
+1406  * call $1615
+1409  * ld a,($0061)
+140c    add a,$dd
+140e    ld l,a
+140f    ld a,$19
+1411    adc a,$00
+1413    ld h,a
+1414    ld a,($00cc)
+1417    and (hl)
+1418    jr z,$142b
+141a  * ld a,($0061)
+141d    add a,$d9
+141f    ld l,a
+1420    ld h,$00
+1422    ld a,($0065)
+1425    cp (hl)
+1426    jr nz,$142b
+1428  * call $1272
+142b  * ld a,($0061)
+142e    inc a
+142f    ld ($0061),a
+1432    cp $04
+1434    jr nz,$1406
+1436  * ret
+14d3  * ld a,(hl)
+14d6    cp $00
+14d8    jr z,$14e1
+14da  * cp $04
+14dc    jr z,$1519
+14de  * jp $1566
+14e1  * ld a,$00
+14e3    ld ($0061),a
+14e6  * call $1615
+14e9  * ld a,($0061)
+14ec    add a,$d5
+14ee    ld l,a
+14ef    ld a,$19
+14f1    adc a,$00
+14f3    ld h,a
+14f4    ld a,($0081)
+14f7    and (hl)
+14f8    jr nz,$150b
+14fa  * ld a,($0061)
+14fd    add a,$9a
+14ff    ld l,a
+1500    ld h,$00
+1502    ld a,($0065)
+1505    cp (hl)
+1506    jr nz,$150b
+1508  * call $0e46
+150b  * ld a,($0061)
+150e    inc a
+150f    ld ($0061),a
+1512    cp $06
+1514    jr nz,$14e6
+1516  * jp $1566
+1519  * ld a,$00
+151b    ld ($0061),a
+151e  * call $1615
+1521  * ld a,($0061)
+1524    add a,$d5
+1526    ld l,a
+1527    ld a,$19
+1529    adc a,$00
+152b    ld h,a
+152c    ld a,($00cc)
+152f    and (hl)
+1530    jr nz,$155b
+1532  * ld a,($0061)
+1535    add a,$d9
+1537    ld l,a
+1538    ld h,$00
+153a    ld a,($0065)
+153d    cp (hl)
+153e    jr nz,$155b
+1540  * ld a,($0061)
+1543    cp $02
+1545    jr nz,$1558
+1547  * ld ix,($0063)
+154b    ld a,(hl)
+154e    or a
+154f    jr z,$1558
+1551  * ld a,(hl)
+1554    cp $03
+1556    jr nc,$155b
+1558  * call $1217
+155b  * ld a,($0061)
+155e    inc a
+155f    ld ($0061),a
+1562    cp $04
+1564    jr nz,$151e
+1566  * ret
+1567  * ld a,($0065)
+156a    and $f0
+156c    ld ($0066),a
+156f    ld a,$00
+1571    ld ($0061),a
+1574  * ld a,($0061)
+1577    add a,$d5
+1579    ld l,a
+157a    ld a,$19
+157c    adc a,$00
+157e    ld h,a
+157f    ld a,($0081)
+1582    and (hl)
+1583    jr nz,$15b7
+1585  * call $1615
+1588  * ld a,($0061)
+158b    add a,$9a
+158d    ld l,a
+158e    ld h,$00
+1590    ld a,(hl)
+1591    ld ($0065),a
+1594    and $f0
+1596    ld b,a
+1597    ld a,($0066)
+159a    cp b
+159b    jr nz,$15b7
+159d  * ld a,($0065)
+15a0    call $09fb
+15a3  * ld ($0062),a
+15a6    call $0a05
+15a9  * ld ($0063),ix
+15ad    ld a,(hl)
+15b0    cp $00
+15b2    jr nz,$15b7
+15b4  * call $0e46
+15b7  * ld a,($0061)
+15ba    inc a
+15bb    ld ($0061),a
+15be    cp $06
+15c0    jr nz,$1574
+15c2  * ld a,$00
+15c4    ld ($0061),a
+15c7  * ld a,($0061)
+15ca    add a,$d5
+15cc    ld l,a
+15cd    ld a,$19
+15cf    adc a,$00
+15d1    ld h,a
+15d2    ld a,($00cc)
+15d5    and (hl)
+15d6    jr nz,$1609
+15d8  * call $1615
+15db  * ld a,($0061)
+15de    add a,$d9
+15e0    ld l,a
+15e1    ld h,$00
+15e3    ld a,(hl)
+15e4    ld ($0065),a
+15e7    srl a
+15e9    srl a
+15eb    srl a
+15ed    srl a
+15ef    ld b,a
+15f0    ld a,($0066)
+15f3    cp b
+15f4    jr nz,$1609
+15f6  * ld a,($0065)
+15f9    call $09fb
+15fc  * ld ($0062),a
+15ff    call $0a05
+1602  * ld ($0063),ix
+1606    call $1217
+1609  * ld a,($0061)
+160c    inc a
+160d    ld ($0061),a
+1610    cp $04
+1612    jr nz,$15c7
+1614  * ret
+1615  * exx
+1616    ex af,af'
+1617    bit 0,(hl)
+1619    jr z,$1626
+161b  * ld a,($0077)
+161e    or $10
+1620    ld (hl),$27
+1622    ld (de),a
+1623    jp $0000   ; self-modified displacement
+1626  * ex af,af'
+1627    exx
+1628    ret
+1629  * ld a,($0050)
+162c    or a
+162d    jr nz,$167e
+162f  * ld a,(bc)
+1630    or a
+1631    jr z,$1651
+1633  * ld ($1637),a
+1636    ld a,($0400)
+1639    ld (hl),$2a
+163b    ld (de),a
+163c    inc bc
+163d    bit 7,b
+163f    jp nz,$167e
+1642  * ld a,($0508)
+1645    inc a
+1646    ld ($0508),a
+1649    call $1681
+164c  * ld b,$80
+164e    jp $167e
+1651  * ld a,($00bd)
+1654    cp $ff
+1656    jr z,$167b
+1658  * ld hl,($00bc)
+165b    inc hl
+165c    inc hl
+165d    ld BC,($00ad)
+1661    add hl,bc
+1662    ld b,h
+1663    ld c,l
+1664    ld a,($00af)
+1667    adc a,$00
+1669    sla b
+166b    rla
+166c    ld ($0508),a
+166f    scf
+1670    rr b
+1672    ld hl,$4000
+1675    call $1681
+1678  * jp $167e
+167b  * call $0adc
+167e  * ex af,af'
+167f    exx
+1680    ret
+1681  * push hl
+1682    ld hl,$6000
+1685    ld (hl),a
+1686    or a
+1687    rra
+1688    ld (hl),a
+1689    rra
+168a    ld (hl),a
+168b    rra
+168c    ld (hl),a
+168d    rra
+168e    ld (hl),a
+168f    rra
+1690    ld (hl),a
+1691    rra
+1692    ld (hl),a
+1693    rra
+1694    ld (hl),a
+1695    rra
+1696    ld (hl),a
+1697    pop hl
+1698    ret
+1699  * ld a,$00
+169b    ld ($0505),a
+169e  * ld a,($0505)
+16a1    rlca
+16a2    rlca
+16a3    add a,$51
+16a5    ld l,a
+16a6    ld a,$00
+16a8    adc a,$00
+16aa    ld h,a
+16ab    ld a,(hl)
+16ac    ld ($0502),a
+16af    inc hl
+16b0    ld a,(hl)
+16b1    ld ($0503),a
+16b4    inc hl
+16b5    ld a,(hl)
+16b6    ld ($0504),a
+16b9    ld a,($0502)
+16bc    cp $ff
+16be    jr nz,$16cf
+16c0  * ld a,($0503)
+16c3    cp $ff
+16c5    jr nz,$16cf
+16c7  * ld a,($0504)
+16ca    cp $ff
+16cc    jp $1750
+16cf  * ld BC,($0502)
+16d3    ld a,($0504)
+16d6    sla b
+16d8    rla
+16d9    scf
+16da    rr b
+16dc    ld ($0508),a
+16df    call $1681
+16e2  * call $1760
+16e5  * ld ($0507),a
+16e8    call $1760
+16eb  * ld ($0506),a
+16ee    ld hl,($0506)
+16f1    add hl,hl
+16f2    add hl,hl
+16f3    inc hl
+16f4    inc hl
+16f5    ld a,($0502)
+16f8    add a,l
+16f9    ld ($0502),a
+16fc    ld a,($0503)
+16ff    adc a,h
+1700    ld ($0503),a
+1703    ld a,($0504)
+1706    adc a,$00
+1708    ld ($0504),a
+170b    ld a,($0500)
+170e    ld d,a
+170f    ld a,($0501)
+1712    ld e,a
+1713  * call $1760
+1716  * cp d
+1717    jr z,$171e
+1719  * call $1760
+171c  * jr $1727
+171e  * call $1760
+1721  * cp e
+1722    jr nz,$1727
+1724  * or a
+1725    jr $175f
+1727  * call $1760
+172a  * ld h,a
+172b    call $1760
+172e  * ld l,a
+172f    ld a,($0502)
+1732    add a,l
+1733    ld ($0502),a
+1736    ld a,($0503)
+1739    adc a,h
+173a    ld ($0503),a
+173d    ld a,($0504)
+1740    adc a,$00
+1742    ld ($0504),a
+1745    ld hl,($0506)
+1748    dec hl
+1749    ld ($0506),hl
+174c    ld a,h
+174d    or l
+174e    jr nz,$1713
+1750  * ld a,($0505)
+1753    inc a
+1754    ld ($0505),a
+1757    cp $04
+1759    jr z,$175e
+175b  * jp $169e
+175e  * scf
+175f  * ret
+1760  * ld a,($0050)
+1763    or a
+1764    jr nz,$1760
+1766  * ld a,(bc)
+1767    inc bc
+1768    bit 7,b
+176a    jr nz,$177a
+176c  * ld b,a
+176d    ld a,($0508)
+1770    inc a
+1771    ld ($0508),a
+1774    call $1681
+1777  * ld a,b
+1778    ld b,$80
+177a  * ret
+178b  * push hl
+178c    ld hl,$4000
+178f  * bit 7,(hl)
+1791    jr nz,$178f
+1793  * pop hl
+1794    ret
+1795  * ld l,$00
+1797    ld h,a
+1798    ld c,b
+1799    ld b,$00
+179b    ld a,$08
+179d  * add hl,hl
+179e    jr nc,$17a1
+17a0  * add hl,bc
+17a1  * dec a
+17a2    jr nz,$179d
+17a4  * push hl
+17a5    pop bc
+17a6    ret
+17a7  * push bc
+17a8    pop hl
+17a9    ld bc,$0000
+17ac    ld iy,$0000
+17b0    ld a,$10
+17b2  * add iy,iy
+17b4    adc hl,HL
+17b6    jr nc,$17bc
+17b8  * add iy,de
+17ba    adc hl,BC
+17bc  * dec a
+17bd    jr nz,$17b2
+17bf  * push hl
+17c0    pop bc
+17c1    push iy
+17c3    pop de
+17c4    ret
+wrote C:\Users\kual\Downloads\DemoBuildV3\DEMO\RR3Native\runtime\GenZ80.cs
